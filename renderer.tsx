@@ -7,12 +7,11 @@ import React = require('react');
 import ReactDOM = require('react-dom');
 
 interface Props {
-
 }
 
 class HelloWorld extends React.Component<Props, {}> {
     return () {
-        return <h1>Hello World React</h1>
+        return <h1>Hello World React</h1>;
     }
 }
 
