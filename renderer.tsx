@@ -5,14 +5,6 @@
 
 import React = require('react');
 import ReactDOM = require('react-dom');
+import {TimerApp} from "./components/timer-app"
 
-interface Props {
-}
-
-class HelloWorld extends React.Component<Props, {}> {
-    render () {
-        return <h1>Hello World React new</h1>;
-    }
-}
-
-ReactDOM.render(<HelloWorld />, document.querySelector('main'));
+ReactDOM.render(<TimerApp />, document.querySelector('main'));
