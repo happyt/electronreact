@@ -10,8 +10,8 @@ interface Props {
 }
 
 class HelloWorld extends React.Component<Props, {}> {
-    return () {
-        return <h1>Hello World React</h1>;
+    render () {
+        return <h1>Hello World React new</h1>;
     }
 }
 

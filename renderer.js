@@ -14,8 +14,8 @@ var HelloWorld = (function (_super) {
     function HelloWorld() {
         _super.apply(this, arguments);
     }
-    HelloWorld.prototype.return = function () {
-        return React.createElement("h1", null, "Hello World React");
+    HelloWorld.prototype.render = function () {
+        return React.createElement("h1", null, "Hello World React new");
     };
     return HelloWorld;
 }(React.Component));
