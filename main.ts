@@ -1,8 +1,6 @@
-const electron = require('electron')
+import { app, BrowserWindow, Menu} from 'electron';
 // Module to control application life.
-const app = electron.app
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+const myApp : Electron.App = app;
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -51,3 +49,23 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+const template: any = [{
+  label: 'Timer',
+  submenu: [{
+    label: 'Start',
+    accelerator: 'CmdOrCtrl+T',
+    click (item, focusedWindow) {
+      focusedWindow.webContents.send('start-timer');
+    },{
+    label: 'Stop',
+    accelerator: 'CmdOrCtrl+Y',
+    click (item, focusedWindow) {
+      focusedWindow.webContents.send('stop-timer');
+    }
+  }]
+}]
+
+// Mac / Darwin bits in here...
+
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);

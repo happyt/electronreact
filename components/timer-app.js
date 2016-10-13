@@ -5,6 +5,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var React = require("react");
+var electron_1 = require('electron');
 var timer_clock_1 = require("./timer-clock");
 var timer_controls_1 = require("./timer-controls");
 var TimerApp = (function (_super) {
@@ -36,6 +37,14 @@ var TimerApp = (function (_super) {
         this.setState({
             timerInterval: null
         });
+    };
+    TimerApp.prototype.componentDidMount = function () {
+        electron_1.ipcRenderer.on('start-timer', this.startTimer);
+        electron_1.ipcRenderer.on('stop-timer', this.stopTimer);
+    };
+    TimerApp.prototype.componentWillUnmount = function () {
+        electron_1.ipcRenderer.removeListener('start-timer', this.startTimer);
+        electron_1.ipcRenderer.removeListener('stop-timer', this.stopTimer);
     };
     TimerApp.prototype.render = function () {
         return React.createElement("div", {className: "container-fluid"}, 
