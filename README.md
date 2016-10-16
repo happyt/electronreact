@@ -32,5 +32,5 @@ npm install && npm start
 ## Next steps
 
 - `source, dist` - Tidy up with these directories
-- `CSS modules` 
+- `add CSS modules` 
 - 
