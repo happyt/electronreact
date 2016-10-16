@@ -16,7 +16,7 @@ I've added:
 
 - `typescript, typings` - Moved to ts, then tsx files
 - `React, ReactDOM` - for front end
-- 
+- `D3` in charting branch
 
 ## To Use
 
