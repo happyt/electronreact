@@ -1,4 +1,5 @@
 import React = require("react");
+import { ipcRenderer } from 'electron';
 import { TimerClock } from "./timer-clock";
 import { TimerControls } from "./timer-controls";
 
@@ -39,6 +40,15 @@ export class TimerApp extends React.Component< {}, TimerAppState> {
         } as TimerAppState)
     }
 
+    componentDidMount() {
+        ipcRenderer.on('start-timer', this.startTimer);
+        ipcRenderer.on('stop-timer', this.stopTimer);
+    }
+
+    componentWillUnmount() {
+        ipcRenderer.removeListener('start-timer', this.startTimer);
+        ipcRenderer.removeListener('stop-timer', this.stopTimer);
+    }
     render() {
         return <div className="container-fluid">
             <TimerClock current={this.state.stopTime - this.state.startTime} />
