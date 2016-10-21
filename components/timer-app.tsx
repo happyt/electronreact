@@ -22,6 +22,7 @@ export class TimerApp extends React.Component< {}, TimerAppState> {
     }
 
     startTimer() {
+        
         this.setState({
             startTime: Date.now(),
             stopTime: Date.now(),
