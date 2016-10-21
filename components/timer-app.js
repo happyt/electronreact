@@ -8,6 +8,7 @@ var React = require("react");
 var electron_1 = require('electron');
 var timer_clock_1 = require("./timer-clock");
 var timer_controls_1 = require("./timer-controls");
+var Chart_1 = require('./Chart');
 var TimerApp = (function (_super) {
     __extends(TimerApp, _super);
     function TimerApp(props) {
@@ -49,7 +50,8 @@ var TimerApp = (function (_super) {
     TimerApp.prototype.render = function () {
         return React.createElement("div", {className: "container-fluid"}, 
             React.createElement(timer_clock_1.TimerClock, {current: this.state.stopTime - this.state.startTime}), 
-            React.createElement(timer_controls_1.TimerControls, {timerOn: !!this.state.timerInterval, start: this.startTimer, stop: this.stopTimer}));
+            React.createElement(timer_controls_1.TimerControls, {timerOn: !!this.state.timerInterval, start: this.startTimer, stop: this.stopTimer}), 
+            React.createElement(Chart_1.default, null));
     };
     return TimerApp;
 }(React.Component));

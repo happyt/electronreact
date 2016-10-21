@@ -51,12 +51,14 @@ app.on('activate', function () {
 // code. You can also put them in separate files and require them here.
 const template: any = [{
   label: 'Timer',
-  submenu: [{
+  submenu: [
+    {
     label: 'Start',
     accelerator: 'CmdOrCtrl+T',
     click (item, focusedWindow) {
       focusedWindow.webContents.send('start-timer');
-    },{
+    },
+    {
     label: 'Stop',
     accelerator: 'CmdOrCtrl+Y',
     click (item, focusedWindow) {
