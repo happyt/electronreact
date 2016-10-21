@@ -2,7 +2,7 @@ import React = require("react");
 import { ipcRenderer } from 'electron';
 import { TimerClock } from "./timer-clock";
 import { TimerControls } from "./timer-controls";
-import { Chart } from './Chart';
+import Chart from './chart';
 
 interface TimerAppState {
     startTime: number,

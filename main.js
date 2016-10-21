@@ -41,20 +41,25 @@ electron_1.app.on('activate', function () {
 });
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-var template = [{
+var template = [
+    {
         label: 'Timer',
-        submenu: [{
+        submenu: [
+            {
                 label: 'Start',
                 accelerator: 'CmdOrCtrl+T',
                 click: function (item, focusedWindow) {
                     focusedWindow.webContents.send('start-timer');
-                }, }, {
+                }
+            },
+            {
                 label: 'Stop',
                 accelerator: 'CmdOrCtrl+Y',
                 click: function (item, focusedWindow) {
                     focusedWindow.webContents.send('stop-timer');
                 }
-            }]
+            }
+        ]
     }];
 // Mac / Darwin bits in here...
 var menu = electron_1.Menu.buildFromTemplate(template);

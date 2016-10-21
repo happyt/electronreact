@@ -1,11 +1,14 @@
 import React = require("react");
 
-export class Chart extends React.Component<{}, {}> {
+export default class Chart extends React.Component<{}, {}> {
+   constructor() {
+        super();
+   }
 
-    render() {
-
-        return (
-           <h1>Hello, World!</h1>;
-        )
+   public render() {
+        return(
+           <h1>Hello, World!</h1>
+        );
     }
 }
+
