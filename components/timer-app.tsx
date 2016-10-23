@@ -2,7 +2,7 @@ import React = require("react");
 import { ipcRenderer } from 'electron';
 import { TimerClock } from "./timer-clock";
 import { TimerControls } from "./timer-controls";
-import Chart from './chart';
+import Clock from './clock';
 
 interface TimerAppState {
     startTime: number,
@@ -55,7 +55,7 @@ export class TimerApp extends React.Component< {}, TimerAppState> {
         return <div className="container-fluid">
             <TimerClock current={this.state.stopTime - this.state.startTime} />
             <TimerControls timerOn={!!this.state.timerInterval} start={this.startTimer} stop={this.stopTimer} />
-            <Chart />
+            <Clock />
         </div>;
     }
 }
